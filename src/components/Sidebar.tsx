@@ -17,13 +17,18 @@ const Sidebar = () => {
           <li className='sideBar-title'>Setup<span className='sub-bar-title'>
           <a className='link1' 
            onClick={() => {
-            const section = document.getElementById('setup');
+            const section = document.getElementById('automatic-setup');
             if (section) {
               section.scrollIntoView({ behavior: 'smooth' });
             }
           }}
           >Automatic Setup</a>
-          <a className='link1'>Remote storage and optimization</a>
+          <a className='link1'onClick={() => {
+            const section = document.getElementById('remote-storage');
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}>Remote storage and optimization</a>
           <a className='link1'> Manual Setup</a>
           
           </span>

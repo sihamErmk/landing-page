@@ -10,9 +10,9 @@ const Setup: React.FC = () => {
   const colors = ["#fff", "#d13d8a", "#3d85d1"];
 
   return (
-    <section id="setup" className='Setup'>
+    <section className='Setup'>
       <h2 className='Setup-title'>Setup</h2>
-      <h3 className='Setup-title'>Automatic Setup</h3>
+      <h3 className='Setup-title'id='automatic-setup'>Automatic Setup</h3>
       <p className='paragraph-12'>In the root of your Next.js project, run:</p>
 
       <div className='Code-card-1'>
@@ -39,7 +39,7 @@ const Setup: React.FC = () => {
         It will also update your <span className='span3'>.gitignore</span> file to ignore video files in the <span className='span3'>/videos</span> directory. Videos, particularly any of reasonable size, shouldn't be stored/tracked by git. Alternatively, if you'd like to store the original files you can remove the added gitignore lines and install git-lfs.
       </p>
       
-      <h3 className='Setup-title'>Remote storage and optimization</h3>
+      <h3 className='Setup-title' id='remote-storage'>Remote storage and optimization</h3>
     </section>
   );
 };
