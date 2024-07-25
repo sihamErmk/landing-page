@@ -120,7 +120,7 @@ const Home: React.FC = () => {
             ))}
         </pre>
                 
-                <p className="summary" >Or check out the <a className='Docs' href="">docs </a> for manual configuration.</p>
+                <p className="summary" >Or check out the <a className='Docs' onClick={() => navigate('/documentation')} >docs </a> for manual configuration.</p>
               </div>
             </div>
           </section>

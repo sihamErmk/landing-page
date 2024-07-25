@@ -39,18 +39,31 @@ body, html {
 .img-container {
   display: flex;
   justify-content: center;
+  align-items: center; 
   gap: 1.5rem;
-  padding-top: 5rem;
+  padding-top: 6rem;
+  position: relative;
+
 }
 
 .logo-img {
   width: 7rem;
 }
-.logo-img-plus{
-  width: 4rem;
-  height: 4rem;
-  padding-top: 20px;
+
+.logo-img-plus-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; 
+  top: 0; 
+  right: 0; 
 }
+
+.logo-img-plus {
+  width: 2rem;
+  height: 2rem;
+}
+
 
 
 
@@ -158,8 +171,8 @@ body, html {
 }
 
 @media (max-width: 768px) {
-  .logo-img {
-    width: 4rem;
+  .img-container {
+    gap: 0.8rem;
   }
 }
 
@@ -284,7 +297,7 @@ body, html {
 }
 
 .text-wrapper, .text-container {
-  padding: 20px;
+  padding:0px 20px;
 }
 
 .vd-title {
@@ -637,7 +650,9 @@ body, html {
   background-size: cover; 
   background-attachment: fixed; 
   padding: 40px;
+  
 }
+
 
 .next {
   background-color: #521133;
@@ -722,6 +737,7 @@ body, html {
   color: #ffff;
   max-width: 90vw; 
   margin: 0 auto; 
+  overflow-y: auto;
 }
 
 .main-content h1 {
@@ -838,6 +854,8 @@ body, html {
   line-height: 1.1 !important;
   text-align: left !important;
   max-width: 90vw !important;
+  padding: 10px;
+  
 }
 
 .span2 {
@@ -887,11 +905,10 @@ body, html {
   .sidebar {
     width: 100%;
     padding: 10px;
+    overflow-y: auto;
   }
 
-  .main-content {
-    padding: 10px;
-  }
+  
 
   .downloads-links {
     padding-left: 0;
