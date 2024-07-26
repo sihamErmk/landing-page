@@ -1,4 +1,3 @@
-// src/components/YtApi.tsx
 import React from 'react';
 
 type YouTubePlayerProps = {

@@ -507,20 +507,20 @@ body, html {
     width: 60px; 
   }
 }
-
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 2rem; 
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   padding: 0 7rem;
   font-family: inherit;
-  background-color: #000;
+  background-color: transparent;
   padding-bottom: 10rem;
-  padding-top:5rem ;
+  padding-top: 5rem;
 }
 
 .section {
-  padding: 0 1rem; 
+  padding: 0 1rem;
+  text-align: center; 
 }
 
 .section-title {
@@ -558,16 +558,16 @@ body, html {
 
 .avatars {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center; 
   padding: 1rem 0;
+  flex-wrap: nowrap; 
 }
 
 .avatars a {
   display: flex;
   justify-content: center;
   align-items: center;
-
+ 
 }
 
 .avatars img {
@@ -589,6 +589,7 @@ body, html {
 .section-link:hover {
   text-decoration: underline;
 }
+
 @media (max-width: 1200px) {
   .footer-content {
     padding: 0 3rem;
@@ -599,14 +600,14 @@ body, html {
 @media (max-width: 992px) {
   .footer-content {
     padding: 0 2rem;
-    display: flex; /* Added to use flexbox centering */
-    flex-direction: column; /* Ensure elements stack vertically */
-    align-items: center; /* Center horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
   }
   .section {
     padding: 0 0.5rem;
-    width: 100%; /* Ensure sections use full width */
-    text-align: center; /* Center text inside sections */
+    width: 100%; 
+    text-align: center; 
   }
 }
 
@@ -615,17 +616,18 @@ body, html {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 0 1rem;
-    display: flex; /* Added to use flexbox centering */
-    flex-direction: column; /* Ensure elements stack vertically */
-    align-items: center; /* Center horizontally */
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
   }
   .section {
     padding: 0 1rem;
-    width: 100%; /* Ensure sections use full width */
-    text-align: center; /* Center text inside sections */
+    width: 100%; 
+    text-align: center; 
   }
   .avatars {
-    justify-content: center; /* Center avatars */
+    justify-content: center; 
+    flex-wrap: nowrap;
   }
 }
 
@@ -642,7 +644,6 @@ body, html {
     text-align: center; 
   }
 }
-
 
 
 
@@ -667,17 +668,39 @@ body, html {
 }
 
 /*Documentation style*/
+.background-docs{
+  background-image: radial-gradient(ellipse at 50% 0.0001%, #552840, #321323, #000000, black);
+  
+}
 .documentation {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-image: radial-gradient(ellipse at 50% 0.0001%, #552840, #321323, #000000, black);
+  
   background-size: cover; 
   background-attachment: fixed; 
   padding: 40px;
-  
 }
 
+.sidebar {
+  width: 100%; 
+  max-width: 300px; 
+  background-color: transparent;
+  color: white;
+  padding: 20px;
+  height: auto;
+  margin: 0 auto; 
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  justify-content: center;
+  color: #ffff;
+  max-width: 90vw; 
+  margin: 0 auto; 
+  overflow-y: auto;
+}
 
 .next {
   background-color: #521133;
@@ -693,15 +716,7 @@ body, html {
   cursor: pointer;
 }
 
-.sidebar {
-  width: 100%; 
-  max-width: 300px; 
-  background-color: transparent;
-  color: white;
-  padding: 20px;
-  height: auto;
-  margin: 0 auto; 
-}
+
 
 .nav-title {
   display: grid;
@@ -756,15 +771,7 @@ body, html {
 
 
 
-.main-content {
-  flex: 1;
-  padding: 20px;
-  justify-content: center;
-  color: #ffff;
-  max-width: 90vw; 
-  margin: 0 auto; 
-  overflow-y: auto;
-}
+
 
 .main-content h1 {
   color: #ff69b4;
@@ -790,13 +797,14 @@ body, html {
   margin: 0 auto;
   border-radius: 15px;
   overflow: hidden;
+  
 }
 
 .video-container iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   height: 100%; 
   border: none;
 }
@@ -923,36 +931,7 @@ body, html {
 
 
 
-@media (max-width: 768px) {
-  .documentation {
-    padding: 20px;
-  }
 
-  .sidebar {
-    width: 100%;
-    padding: 10px;
-    overflow-y: auto;
-  }
-
-  
-
-  .downloads-links {
-    padding-left: 0;
-  }
-
-  .video-container {
-    padding-bottom: 56.25%;
-    max-width: 100%;
-  }
-
-  .Code-card pre {
-    
-    margin: 10px;
-    font-size: 0.85rem;
-    padding:1rem;
-
-  }
-}
 
 .Setup-title{
  padding-left: 50px;
@@ -981,4 +960,70 @@ padding-bottom: 40px;
 .Usage-title{
   padding-left: 50px;
   padding-bottom: 50px
+}
+
+@media (max-width: 1200px) {
+  .Code-card {
+    padding-right: 10rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .documentation {
+    flex-direction: column; 
+    padding: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    overflow-y: auto;
+    margin-bottom: 20px; 
+  }
+
+  .main-content {
+    padding: 10px;
+    max-width: 100%; 
+  }
+
+  .video-container {
+    padding-bottom: 56.25%;
+    max-width: 100%;
+  }
+
+  .downloads-links {
+    padding-left: 0;
+  }
+
+  .Code-card pre {
+    margin: 10px;
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+
+  .span2, .span3 {
+    font-size: 0.9rem;
+  }
+
+  .Setup-title, .Usage-title {
+    padding-left: 10px;
+  }
+
+  .paragraph-12, .paragraph-1 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Code-card, .Code-card-1 {
+    padding-right: 5rem;
+  }
+
+  .paragraph-12, .paragraph-1 {
+    font-size: 1rem;
+  }
+
+  .span2, .span3 {
+    font-size: 0.8rem;
+  }
 }
