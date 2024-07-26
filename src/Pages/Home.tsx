@@ -124,6 +124,7 @@ const Home: React.FC = () => {
               </div>
             </div>
           </section>
+          
           <section className='video-streaming'>
             <div className='videost-container'>
               <div className='text-container1'>
