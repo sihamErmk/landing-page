@@ -31,15 +31,21 @@ body, html {
   justify-content: center;
   text-align: center;
   height: 100vh;
-  background: 
+  position: relative;
+  overflow: hidden;
+  background:
     linear-gradient(#000000 1px, transparent 1px),
     linear-gradient(to right, #000000 1px, transparent 1px),
-    /* Radial gradient */
-    radial-gradient(ellipse at 50% 65%, #752650, #140511, #000000, black);
+    radial-gradient(ellipse at var(--gradient-x, 50%) var(--gradient-y, 50%), #602243, #14050d, #000000, black);
   background-size: 20px 20px, 20px 20px, cover;
-  background-blend-mode: overlay; 
-  opacity: 1;
+  background-blend-mode: overlay;
+  transition: background-position 0.1s; /* Smooth transition for gradient movement */
+  --gradient-x: 50%;
+  --gradient-y: 70%;
 }
+
+
+
 
 
 .img-container {
@@ -216,8 +222,8 @@ body, html {
 
 .Card-Container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
-  gap: 1.5rem; /* Space between grid items */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1.5rem; 
   padding: 1rem;
   padding-left: 50px;
   padding-right: 50px;
@@ -227,18 +233,18 @@ body, html {
   background: transparent; 
   border-radius: 10px;
   overflow: hidden; 
-  padding: 20px; /* Adjusted padding */
+  padding: 20px; 
   border: 0.5px solid #3a3939;
   box-shadow: rgba(99, 99, 99, 0.1) 0px 4px 12px;
-  text-align: left; /* Align text inside card */
+  text-align: left; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .icon-card {
-  width: 16%; /* Full width of card */
-  height: auto; /* Adjusted height */
+  width: 16%; 
+  height: auto;
   background: transparent;
 }
 
@@ -284,13 +290,13 @@ body, html {
   overflow: hidden; 
   border: 0.5px solid #3a3939;
   box-shadow: rgba(99, 99, 99, 0.1) 0px 4px 12px;
-  width: calc(40% - 20px); /* Adjust width for responsiveness and gap */
+  width: calc(40% - 20px); 
 }
 
 .video-wrapper {
   width: 100%;
   position: relative;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 56.25%;
   height: 0;
   overflow: hidden;
 }
@@ -391,22 +397,25 @@ body, html {
   cursor: pointer;
 
 }
+
+
 .video-streaming {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 80px;
-  height: auto;
-  background: 
+  height: 100vh;
+  background:
     linear-gradient(#000000 1px, transparent 1px),
     linear-gradient(to right, #000000 1px, transparent 1px),
-    radial-gradient(ellipse at 50% 50%, #d54085, #832257, #4b1233, #000000, black);
+    radial-gradient(ellipse at var(--gradient-x, 30%) var(--gradient-y, 30%), #571d38, #55193a, #14060e, #000000, black);
   background-size: 20px 20px, 20px 20px, cover;
   background-blend-mode: overlay;
-
-
-  
+  transition: background-position 0.1s; 
 }
+
+
+
 
 .videost-container {
   display: flex;
@@ -624,13 +633,13 @@ body, html {
   .footer-content {
     padding: 0 1rem;
     gap: 0.5rem;
-    display: flex; /* Added to use flexbox centering */
-    flex-direction: column; /* Ensure elements stack vertically */
-    align-items: center; /* Center horizontally */
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
   }
   .section-description {
     padding-left: 0;
-    text-align: center; /* Center text inside description */
+    text-align: center; 
   }
 }
 
@@ -647,7 +656,7 @@ body, html {
 
 @media (max-width: 1200px) {
   .Card-Container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

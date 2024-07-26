@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import YouTubePlayer from '../components/YtApi';
 import { useNavigate } from 'react-router-dom';
+import { handleMouseMove } from '../utils/MousseMoves';
 
 console.log(YouTubePlayer); // Add this to check if YouTubePlayer is imported correctly
 
 const Home: React.FC = () => {
     const navigate = useNavigate();
     const message = `
-    import Video from 'next-video' ;\nimport myVideo from '/videos/my-video.mp4' ;\n\nexport default function Page(){\n  return <Video src={myVideo} />;
-    
-    `
-  
+    import Video from 'next-video' ;\nimport myVideo from '/videos/my-video.mp4' ;\n\nexport default function Page(){\n  return <Video src={myVideo} />; `
     const messageArr = message.trim().split(" ");
     const colors = ["#fff", "#d13d8a", "#3d85d1"];
+
+
+    useEffect(() => {
+      document.addEventListener('mousemove', handleMouseMove);
+      return () => {
+        document.removeEventListener('mousemove', handleMouseMove);
+      };
+    }, []);
+
+
   return (
     <div className="App">
        {/* Hero Section */}
@@ -124,7 +132,7 @@ const Home: React.FC = () => {
               </div>
             </div>
           </section>
-          
+
           <section className='video-streaming'>
             <div className='videost-container'>
               <div className='text-container1'>
